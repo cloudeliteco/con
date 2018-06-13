@@ -1,0 +1,158 @@
+<apex:page standardController="Lead" tabStyle="Lead" sidebar="false" lightningStylesheets="true">
+ 
+ <apex:form > 
+  
+  <apex:slds />
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer"> 
+    
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered"> 
+    
+        <thead>
+            <tr class="slds-text-title_caps slds-text-heading--label">
+                <th scope="col" class="slds-cell-buffer_left">
+                  <div class="slds-truncate" title="Class">Class</div>  
+                </th>
+                <th scope="col" class="slds-cell-buffer_left">
+                  <div class="slds-truncate" title="Scheduled">Scheduled</div>      
+                </th>
+                <th scope="col" class="slds-cell-buffer_left">
+                 <div class="slds-truncate" title="Claimed">Claimed</div>      
+                </th>
+                <th scope="col" class="slds-cell-buffer_left">
+                 <div class="slds-truncate" title="Allowed">Allowed</div>       
+                </th>
+                <th scope="col" class="slds-cell-buffer_left">
+                  <div class="slds-truncate" title="CUD">CUD</div>      
+                </th>
+                <th scope="col" class="slds-cell-buffer_left">
+                 <div class="slds-truncate" title="Status">Status</div>       
+                </th>     
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row" >
+                    Secured
+                </td>
+                <td>
+                 <apex:outputfield value="{!Lead.Secured_Scheduled_Amount__c}"/>
+                </td>
+                <td> 
+                  <apex:outputfield value="{!Lead.Secured_Claimed_Amount__c}"/>  
+                </td>
+                <td>
+                  <apex:outputfield value="{!Lead.Secured_Allowed_Amount__c}"/>  
+                </td>
+                <td>
+                    {!Lead.Secured_CUD__c}
+                </td>
+                <td>
+                    {!Lead.Secured_Claim_Status__c}
+                </td>
+            </tr>
+            <tr>
+                <td scope="row" >
+                    UnSecured 
+                </td>
+                <td>
+                  <apex:outputfield value="{!Lead.Unsecured_Scheduled_Amount__c}"/>  
+                </td>
+                <td> 
+                   <apex:outputfield value="{!Lead.Unsecured_Claimed_Amount__c}"/>
+                </td>
+                <td>
+                  <apex:outputfield value="{!Lead.Unsecured_Allowed_Amount__c}"/>
+                </td>
+                <td>
+                    {!Lead.UnSecured_CUD__c}
+                </td>
+                <td>
+                    {!Lead.Unsecured_Claim_Status__c}
+                </td>
+            </tr>
+            <tr>
+                <td scope="row" >
+                    Priority 
+                </td>
+                <td>
+                  <apex:outputfield value="{!Lead.Priority_Scheduled_Amount__c}"/>  
+                </td>
+                <td> 
+                  <apex:outputfield value="{!Lead.Priority_Claimed_Amount__c}"/>  
+                </td>
+                <td>
+                   <apex:outputfield value="{!Lead.Priority_Allowed_Amount__c}"/> 
+                </td>
+                <td>
+                    {!Lead.Priority_CUD__c}
+                </td>
+                <td>
+                    {!Lead.Priority_Claim_Status__c}
+                </td>
+            </tr>
+            <tr>
+                <td scope="row" >
+                    Admin 
+                </td>
+                <td>
+                 <apex:outputfield value="{!Lead.Admin_Scheduled_Amount__c}"/>   
+                </td>
+                <td> 
+                 <apex:outputfield value="{!Lead.Admin_Claimed_Amount__c}"/>   
+                </td>
+                <td>
+                 <apex:outputfield value="{!Lead.Admin_Allowed_Amount__c}"/>   
+                </td>
+                <td>
+                    {!Lead.Admin_CUD__c}
+                </td>
+                <td>
+                    {!Lead.Admin_Claim_Status__c}
+                </td>
+            </tr>
+            <tr>
+                <td scope="row" >
+                    Admin503B 
+                </td>
+                <td>
+                 <apex:outputfield value="{!Lead.Admin503B_Scheduled_Amount__c}"/>   
+                </td>
+                <td> 
+                 <apex:outputfield value="{!Lead.Admin503B_Claimed_Amount__c}"/>   
+                </td>
+                <td>
+                 <apex:outputfield value="{!Lead.Admin503B_Allowed_Amount__c}"/>  
+                </td>
+                <td>
+                    {!Lead.Admin503B_CUD__c}
+                </td>
+                <td>
+                    {!Lead.Admin503B_Claim_Status__c}
+                </td>
+            </tr>
+            <tr>
+                <td scope="row" >
+                    Totals  
+                </td>
+                <td>
+                    <apex:outputfield value="{!Lead.Scheduled_Total__c}"/>
+                </td>
+                <td>
+                    <apex:outputfield value="{!Lead.Claimed_Total__c}"/>
+                </td>
+                <td>
+                    <apex:outputfield value="{!Lead.Allowed_Total__c}"/>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        </tbody> 
+    </table>
+    </table>
+  </apex:form>
+</apex:page>
