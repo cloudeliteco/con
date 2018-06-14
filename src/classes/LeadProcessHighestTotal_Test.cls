@@ -2,7 +2,7 @@
 private class LeadProcessHighestTotal_Test {
     @testSetup 
     static void setup() {
-        Integer max_leads = 20;
+        Integer max_leads = 4;
         Integer max_companys = 10;
         List<Lead> leads = new List<Lead>();
         
@@ -23,7 +23,7 @@ private class LeadProcessHighestTotal_Test {
         Id batchId = Database.executeBatch(process_leads);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
-        System.assertEquals(200, [select count() from Lead where Processed_for_Total__c = true]);
+        System.assertEquals(40, [select count() from Lead where Processed_for_Total__c = true]);
         System.assertEquals(10, [select count() from Lead where Status = 'Qualified']);
     }
 

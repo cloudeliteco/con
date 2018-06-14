@@ -9,10 +9,10 @@ public class Account_TriggerHandler extends TriggerHandler{
         for(Account a : (List<Account>) Trigger.newMap.values()){
             system.debug('account : ' + a);
             account_names.add(a.Name.toUpperCase());
-            account_name_map.put(a.Name, a.Id);
+            account_name_map.put(a.Name.toUpperCase(), a.Id);
         }
         
-        List<Lead> leads_to_disqualify = [SELECT Id, Name, Status FROM Lead WHERE Company IN :account_name_map.keySet()];
+        List<Lead> leads_to_disqualify = [SELECT Id, Name, Company, Status FROM Lead WHERE Company IN :account_name_map.keySet()];
         for(Lead l : leads_to_disqualify){
             l.Status = 'Disqualified';
             l.Disqualify_Reason__c = 'Account Match';
