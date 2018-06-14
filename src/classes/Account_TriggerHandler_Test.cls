@@ -16,7 +16,7 @@ private class Account_TriggerHandler_Test {
         Database.LeadConvertResult lcr = Database.convertLead(lc);
         System.assert(lcr.isSuccess());
         
-        List<Lead> convertedLeadList = [SELECT Id, Company, Status FROM Lead WHERE Status = 'Disqualified'];
+        List<Lead> convertedLeadList = [SELECT Id, Company, Status, Account_matched__c FROM Lead WHERE Status = 'Disqualified'];
         System.assertEquals(numOfLeads - 1, convertedLeadList.size());
         
         test.stopTest();

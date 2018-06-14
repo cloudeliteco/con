@@ -86,6 +86,18 @@
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <fields>
+        <fullName>Account_matched__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account matched</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Claims (Account matched)</relationshipLabel>
+        <relationshipName>MatchedClaims</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -4492,6 +4504,27 @@ IF( Admin503B_Scheduled_As_Disputed__c , &apos;D&apos;, NULL)</formula>
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Disqualify_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Disqualify Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account Match</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Amount</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>DoNotCall</fullName>

@@ -1,6 +1,6 @@
 global class Lead_FindAccounts implements Database.Batchable<sObject>{
     global Database.QueryLocator start(Database.BatchableContext BC){
-        String query = 'SELECT Id, Name, Company FROM Lead WHERE Processed_for_Account_Dupe__c = false ORDER BY Company';
+        String query = 'SELECT Id, Name, Company FROM Lead ORDER BY Company';
         return Database.getQueryLocator(query);
     }
     
@@ -17,9 +17,10 @@ global class Lead_FindAccounts implements Database.Batchable<sObject>{
         
         List<Account> existing_acounts = [SELECT Name, RecordType.Name FROM Account WHERE Name IN :company_dupes_in_batch.keyset()];
         Set<String> existing_acount_names = new Set<String>();
-        
+        Map<String, Id> existing_acount_names_map = new Map<String, Id>();
         for(Account a : existing_acounts){
             existing_acount_names.add(a.Name.toUpperCase());
+            existing_acount_names_map.put(a.Name.toUpperCase(), a.Id);
             /*
             if(company_dupes_in_batch.containsKey(a.Name.toUpperCase())){
                 for(Lead l : company_dupes_in_batch.get(a.Name.toUpperCase())){
@@ -27,17 +28,19 @@ global class Lead_FindAccounts implements Database.Batchable<sObject>{
                     leads_to_update.add(l);
                 }
             }
-			*/
+            */
         }
         
         for(Lead l : scope){
-            l.Processed_for_Account_Dupe__c = true;
-            if(existing_acount_names.contains(l.Company.toUpperCase())){
+            //l.Processed_for_Account_Dupe__c = true; // removed after initial requirements
+            if(existing_acount_names_map.containsKey(l.Company.toUpperCase())){
                 l.Has_Matching_Account__c = true;
                 l.Status = 'Unqualified';
+                l.Disqualify_Reason__c = 'Account Match';
+                l.Account_matched__c = existing_acount_names_map.get(l.Company.toUpperCase());
             }
         }
-		update scope;
+        update scope;
         
     }
     
