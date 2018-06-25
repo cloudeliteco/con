@@ -4520,7 +4520,7 @@ IF( Admin503B_Scheduled_As_Disputed__c , &apos;D&apos;, NULL)</formula>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Amount</fullName>
+                    <fullName>Lead Match</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -4827,6 +4827,44 @@ IF( Secured_Schuduled_as_Disputed__c, &apos;D&apos;, NULL)</formula>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bank</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bankrupt-specific Excluded Creditors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Competitor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Govt Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inter-company</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>sold to other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>UnSecured_CUD__c</fullName>
         <externalId>false</externalId>
         <formula>IF( Unsecured_Scheduled_As_Contingent__c, &apos;C&apos;, NULL) +
@@ -5022,7 +5060,11 @@ IF( Unsecured_Scheduled_as_Disputed__c, &apos;D&apos;, NULL)</formula>
         <columns>LEAD.UNREAD</columns>
         <columns>LEAD.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Mine</filterScope>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Bankruptcy__c</field>
+            <operation>notEqual</operation>
+        </filters>
         <label>Qualified Leads</label>
     </listViews>
     <listViews>
@@ -5030,17 +5072,13 @@ IF( Unsecured_Scheduled_as_Disputed__c, &apos;D&apos;, NULL)</formula>
         <columns>FULL_NAME</columns>
         <columns>Claim_Amount__c</columns>
         <columns>Claim_Type__c</columns>
+        <columns>LEAD.STATUS</columns>
         <columns>LEAD.CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>LEAD.CREATED_DATE</field>
             <operation>equals</operation>
             <value>TODAY</value>
-        </filters>
-        <filters>
-            <field>Claim_Amount__c</field>
-            <operation>greaterThan</operation>
-            <value>20000</value>
         </filters>
         <label>Today&apos;s Claims</label>
     </listViews>
@@ -5089,10 +5127,10 @@ IF( Unsecured_Scheduled_as_Disputed__c, &apos;D&apos;, NULL)</formula>
         <openType>onClickJavaScript</openType>
         <protected>false</protected>
         <requireRowSelection>true</requireRowSelection>
-        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
-{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
 
-var result = sforce.apex.execute(&quot;ValidateBefore&quot;,&quot;validate&quot;,{});</url>
+var result = sforce.apex.execute(&quot;validatebefore&quot;,&quot;validate&quot;,{});</url>
     </webLinks>
     <webLinks>
         <fullName>GoogleMaps</fullName>

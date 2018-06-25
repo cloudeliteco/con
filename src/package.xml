@@ -12,6 +12,7 @@
     <types>
         <members>Account-Account Layout</members>
         <members>Lead-Lead Layout</members>
+        <members>Opportunity-Opportunity Layout</members>
         <name>Layout</name>
     </types>
     <types>
@@ -37,6 +38,7 @@
     <types>
         <members>Account</members>
         <members>Lead</members>
+        <members>Opportunity</members>
         <name>CustomObject</name>
     </types>
     <version>38.0</version>

@@ -15,7 +15,7 @@ global class Lead_FindAccounts implements Database.Batchable<sObject>{
         }
         
         
-        List<Account> existing_acounts = [SELECT Name, RecordType.Name FROM Account WHERE Name IN :company_dupes_in_batch.keyset()];
+        List<Account> existing_acounts = [SELECT Name, RecordType.Name, Type, (SELECT Id, Name, Bankrupcy__c, Debtor__c FROM Opportunities) FROM Account WHERE Name IN :company_dupes_in_batch.keyset()];
         Set<String> existing_acount_names = new Set<String>();
         Map<String, Id> existing_acount_names_map = new Map<String, Id>();
         for(Account a : existing_acounts){

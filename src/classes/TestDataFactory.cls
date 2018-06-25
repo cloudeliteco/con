@@ -1,5 +1,43 @@
 @isTest
 public class TestDataFactory {
+    
+    public static Id Account_Debtor_RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Debtors').getRecordTypeId();
+    
+    public static List<account> createBankruptcyClaim(String companyName, String bankruptName, String debtorName){
+        Account claimAccount = createAccountWCompanyName(companyName);
+        List<Account> bankruptAccounts = createBankruptcyCompanies(bankruptName, debtorName);
+        Account bankruptAccount = bankruptAccounts[0]; //createAccountWCompanyName(bankruptName);
+        Account debtorAccount = bankruptAccounts[1]; //createAccountWCompanyName(debtorName);
+        
+        Opportunity bankruptClaim = new Opportunity();
+        bankruptClaim.AccountId = claimAccount.Id;
+        bankruptClaim.Bankrupcy__c = bankruptAccount.Id;
+        bankruptClaim.CloseDate = System.today().addDays(7);
+        bankruptClaim.Debtor__c = debtorAccount.Id;
+        bankruptClaim.Name = 'Test Opp';
+        bankruptClaim.StageName = 'New';
+        
+        insert bankruptClaim;
+        
+        List<Account> new_accounts = new List<Account>();
+        new_accounts.add(claimAccount);
+        new_accounts.add(bankruptAccount);
+        new_accounts.add(debtorAccount);
+        
+        return new_accounts;    
+    }
+    
+    public static List<Account> createBankruptcyCompanies(String bankruptName, String debtorName){
+        Account bankruptAccount = createAccountWCompanyName(bankruptName);
+        Account debtorAccount = createAccountWCompanyName(debtorName);
+		debtorAccount.ParentId = bankruptAccount.Id;
+        debtorAccount.RecordTypeId = Account_Debtor_RecordTypeId;
+        update debtorAccount;
+		List<Account> bankruptAccounts = new List<Account>();
+        bankruptAccounts.add(bankruptAccount);
+        bankruptAccounts.add(debtorAccount);
+        return bankruptAccounts;
+    }
     public static Account createAccountWCompanyName(String companyName){
         Account a = new Account();
         a.Name = companyName;
@@ -26,7 +64,7 @@ public class TestDataFactory {
             new_lead.Status = 'New';
             new_leads.add(new_lead);
         }
-        insert new_leads;
+        //insert new_leads;
         return new_leads;
     }
 
