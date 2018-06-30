@@ -505,6 +505,16 @@ IF( Admin503B_Scheduled_As_Disputed__c , &apos;D&apos;, NULL)</formula>
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Creditor_Bankruptcy_Debtor__c</fullName>
+        <externalId>false</externalId>
+        <formula>UPPER(Company) + &apos;|&apos; +  Bankruptcy__c + &apos;|&apos; +  Debtor_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Creditor Bankruptcy Debtor</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Debotor__c</fullName>
         <externalId>false</externalId>
         <label>Debtor</label>
@@ -5041,11 +5051,11 @@ IF( Unsecured_Scheduled_as_Disputed__c, &apos;D&apos;, NULL)</formula>
     <listViews>
         <fullName>AllOpenLeads</fullName>
         <columns>FULL_NAME</columns>
-        <columns>Bankruptcy_Pic__c</columns>
-        <columns>Debotor__c</columns>
         <columns>Claim_Agent_Name__c</columns>
         <columns>Claim_Amount__c</columns>
         <columns>LEAD.STATUS</columns>
+        <columns>Bankruptcy__c</columns>
+        <columns>LEAD.COMPANY</columns>
         <columns>LEAD.CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Open Claims</label>

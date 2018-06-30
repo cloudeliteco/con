@@ -30,16 +30,16 @@ private class Lead_MatchAccounts_Test {
         List<Account> accounts = TestDataFactory.createBankruptcyClaim(nameOfCompany, bankruptCompany, debtorCompany);
 		
 		// now insert a second debtor company for circuit city, but without an opportunity / claim
-		Account otherDebtor = new Account();
-        otherDebtor.Name = 'Other Circuit City Debtor';
-        otherDebtor.ParentId = accounts[1].Id; // = circuit city
-        otherDebtor.RecordTypeId = TestDataFactory.Account_Debtor_RecordTypeId;
-        insert otherDebtor;
+		Account otherbankrupt = new Account();
+        otherbankrupt.Name = 'Other Circuit City otherbankrupt';
+        //otherbankrupt.ParentId = accounts[1].Id; // = circuit city
+        //otherbankrupt.RecordTypeId = TestDataFactory.Account_Debtor_RecordTypeId;
+        insert otherbankrupt;
         
         Lead test_lead = new Lead();
         test_lead.Company = nameOfCompany; // same lead company name
-        test_lead.Bankruptcy__c = accounts[1].Id; // same bankruptcy name
-        test_lead.Debtor_Name__c = otherDebtor.Id; // new debtor account
+        test_lead.Bankruptcy__c = otherbankrupt.Id; // same bankruptcy name
+      //  test_lead.Debtor_Name__c = otherDebtor.Id; // new debtor account
         test_lead.LastName = 'Testing';
         
         test.startTest();

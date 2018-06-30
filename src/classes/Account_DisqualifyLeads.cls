@@ -1,25 +1,6 @@
-public class Account_TriggerHandler extends TriggerHandler{
-    public override void afterInsert() {
-        disqualify_leads();
-    }
-    
-    private void disqualify_leads(){
-        
-        //Map<String, Id> account_name_map = new Map<String, Id>();
-        Set<Id> account_ids = new Set<Id>();
-        for(Account a : (List<Account>) Trigger.newMap.values()){
-            system.debug('account : ' + a);
-            //account_name_map.put(a.Name.toUpperCase(), a.Id);
-            if(!account_ids.contains(a.Id)) account_ids.add(a.Id);
-        }
-        
-        Account_DisqualifyLeads.process(account_ids);
-        
-        /* 
-         * moved code to Account_DisqualifyLeads class for reuse from opportunity
-         * 
-         * 
-        List<Account> existing_acounts = [SELECT Name, RecordType.Name, LeadType__c , Type, (SELECT Id, Name, Bankrupcy__c, Debtor__c FROM Opportunities) FROM Account WHERE Name IN :account_name_map.keySet()];
+public class Account_DisqualifyLeads {
+    public static void process(Set<Id> accountIds){
+        List<Account> existing_acounts = [SELECT Name, RecordType.Name, LeadType__c , Type, (SELECT Id, Name, Bankrupcy__c, Debtor__c FROM Opportunities) FROM Account WHERE Id IN :accountIds];
         Map<String, Account> existing_account_map = new Map<String, Account>(); //[SELECT Id, Name, RecordType.Name, Type, (SELECT Id, Name, Bankrupcy__c, Debtor__c FROM Opportunities) FROM Account WHERE Name IN :account_name_map.values()];
         for(Account a : existing_acounts){
             existing_account_map.put(a.Name.toUpperCase(), a);
@@ -27,7 +8,7 @@ public class Account_TriggerHandler extends TriggerHandler{
         
         Set<String> disqualified_account_types = new Set<String>{'Bank', 'Competitor', 'Govt Agency'};
             
-        List<Lead> leads_to_disqualify = [SELECT Id, Name, Company, Status FROM Lead WHERE Company IN :account_name_map.keySet()];
+        List<Lead> leads_to_disqualify = [SELECT Id, Name, Bankruptcy__c, Company, Status FROM Lead WHERE Company IN :existing_account_map.keySet()];
         for(Lead l : leads_to_disqualify){
             system.debug('lead : ' + l);
             Account matching_account;
@@ -54,6 +35,6 @@ public class Account_TriggerHandler extends TriggerHandler{
             }
         }
         update leads_to_disqualify;
-		*/
     }
+
 }

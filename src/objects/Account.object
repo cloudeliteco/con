@@ -1417,7 +1417,7 @@
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>Parent_Account_is_required</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>this rule will ensure that a parent account is populated when the account type is in (BankruptcySpecific, SoldToOther,
 Inter-company and client and potential client)</description>
         <errorConditionFormula>AND(

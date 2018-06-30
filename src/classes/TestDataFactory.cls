@@ -1,6 +1,8 @@
 @isTest
 public class TestDataFactory {
     
+     
+	public static Id Account_Bankruptcy_RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Bankruptcy').getRecordTypeId();        
     public static Id Account_Debtor_RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Debtors').getRecordTypeId();
     
     public static List<account> createBankruptcyClaim(String companyName, String bankruptName, String debtorName){
@@ -45,7 +47,7 @@ public class TestDataFactory {
         insert a;
         return a;
     }
-    
+    /*
     public static List<Account> createMultipleAccounts(Integer numOfAccts){
         List<Account> accounts = new List<Account>();
         for(Integer i = 0 ; i < numOfAccts; i++){
@@ -54,6 +56,7 @@ public class TestDataFactory {
         }
         return accounts;
     }
+    */
     public static List<Lead> createLeadsWCompanyName(Integer numOfLeads, String companyName){
 		List<Lead> new_leads = new List<Lead>();
         for (integer i = 0 ; i < numOfLeads; i++){

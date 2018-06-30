@@ -72,7 +72,7 @@
         <fullName>Bankrupcy__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Bankrupcy</label>
+        <label>Bankruptcy</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Opportunities</relationshipLabel>
         <relationshipName>Opportunities</relationshipName>
