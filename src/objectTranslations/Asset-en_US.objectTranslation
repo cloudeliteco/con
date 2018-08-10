@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Claim</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Claims</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Access</value>
+        </caseValues>
+        <name>asset_access</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Access Level</value>
+        </caseValues>
+        <name>asset_access_level</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Account</value>
+        </caseValues>
+        <name>asset_account</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Contact</value>
+        </caseValues>
+        <name>asset_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Currency</value>
+        </caseValues>
+        <name>asset_currency</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Custom Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Claim Custom Fields</value>
+        </caseValues>
+        <name>asset_custom_field</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Data</value>
+        </caseValues>
+        <name>asset_data</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Description</value>
+        </caseValues>
+        <name>asset_description</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Detail Link</value>
+        </caseValues>
+        <name>asset_detail_link</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Division</value>
+        </caseValues>
+        <name>asset_division</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Edit</value>
+        </caseValues>
+        <name>asset_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Claim Fields</value>
+        </caseValues>
+        <name>asset_field</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim History</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Claim History</value>
+        </caseValues>
+        <name>asset_history</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim History ID</value>
+        </caseValues>
+        <name>asset_history_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim ID</value>
+        </caseValues>
+        <name>asset_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Information</value>
+        </caseValues>
+        <name>asset_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Install Date</value>
+        </caseValues>
+        <name>asset_installdate</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Is Competitor Product</value>
+        </caseValues>
+        <name>asset_iscompetitorproduct</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Internal Claim</value>
+        </caseValues>
+        <name>asset_isinternal</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Level</value>
+        </caseValues>
+        <name>asset_level</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Name</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Claim Names</value>
+        </caseValues>
+        <name>asset_name</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Owner</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Claim Owners</value>
+        </caseValues>
+        <name>asset_owner</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Owner Alias</value>
+        </caseValues>
+        <name>asset_owner_alias</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Claim</value>
+        </caseValues>
+        <name>asset_parent</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Claim ID</value>
+        </caseValues>
+        <name>asset_parent_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Price</value>
+        </caseValues>
+        <name>asset_price</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Product</value>
+        </caseValues>
+        <name>asset_product</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Provided By</value>
+        </caseValues>
+        <name>asset_providedby_account</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Provided By ID</value>
+        </caseValues>
+        <name>asset_providedby_account_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Purchase Date</value>
+        </caseValues>
+        <name>asset_purchasedate</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Quantity</value>
+        </caseValues>
+        <name>asset_quantity</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Claim Record Types</value>
+        </caseValues>
+        <name>asset_record_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Root Claim</value>
+        </caseValues>
+        <name>asset_root</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Root Claim ID</value>
+        </caseValues>
+        <name>asset_root_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Serial Number</value>
+        </caseValues>
+        <name>asset_serialnumber</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Serviced By</value>
+        </caseValues>
+        <name>asset_servicedby_account</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Serviced By ID</value>
+        </caseValues>
+        <name>asset_servicedby_account_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Status</value>
+        </caseValues>
+        <name>asset_status</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Usage End Date</value>
+        </caseValues>
+        <name>asset_usageenddate</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim View</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Claim Views</value>
+        </caseValues>
+        <name>asset_view</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Competitor Claim</value>
+        </caseValues>
+        <name>competitor_asset</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Amount</value>
+        </caseValues>
+        <name>quantity_asset</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Number</value>
+        </caseValues>
+        <name>serial_number_asset</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Claim held by --></label>
+        <name>Claim_held_by__c</name>
+        <picklistValues>
+            <masterLabel>Change of Address</masterLabel>
+            <translation><!-- Change of Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Participation</masterLabel>
+            <translation><!-- Participation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Promissory Note --></label>
+        <name>Promissory_Note__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Claim</masterLabel>
+            <translation><!-- Trade Claim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit</masterLabel>
+            <translation><!-- Unit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Purchase Amount --></label>
+        <name>Purchase_Amount__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

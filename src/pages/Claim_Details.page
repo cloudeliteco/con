@@ -1,8 +1,20 @@
-<apex:page standardController="Lead" tabStyle="Lead" sidebar="false" lightningStylesheets="true">
+<apex:page standardController="Lead" tabStyle="Lead" sidebar="false" lightningStylesheets="true" docType="HTML-5.0" >
+
+    <script src="/soap/ajax/43.0/connection.js" type="text/javascript"/>
+    
+    <script>
+        function ReloadPage(){
+            setTimeout(function(){ window.top.location='/{!Lead.Id}'; }, 100);
+        }
+    </script>
  
- <apex:form > 
-  
-  <apex:slds />
+ <apex:form >
+    <apex:inlineEditSupport /> 
+    <apex:slds />
+    <div class="slds-scope">
+    <center>
+        <apex:commandButton value="Save" action="{!Save}" onclick="ReloadPage()" id="SaveButton" />
+    </center>
     
     <table class="slds-table slds-table_bordered slds-table_cell-buffer"> 
     
@@ -154,5 +166,6 @@
         </tbody> 
     </table>
     </table>
+    </div>
   </apex:form>
 </apex:page>

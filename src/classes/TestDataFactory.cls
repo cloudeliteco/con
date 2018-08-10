@@ -1,9 +1,11 @@
 @isTest
 public class TestDataFactory {
     
-     
-	public static Id Account_Bankruptcy_RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Bankruptcy').getRecordTypeId();        
+    
+    public static Id Account_Bankruptcy_RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Bankruptcy').getRecordTypeId();        
     public static Id Account_Debtor_RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Debtors').getRecordTypeId();
+    
+    
     
     public static List<account> createBankruptcyClaim(String companyName, String bankruptName, String debtorName){
         Account claimAccount = createAccountWCompanyName(companyName);
@@ -32,10 +34,10 @@ public class TestDataFactory {
     public static List<Account> createBankruptcyCompanies(String bankruptName, String debtorName){
         Account bankruptAccount = createAccountWCompanyName(bankruptName);
         Account debtorAccount = createAccountWCompanyName(debtorName);
-		debtorAccount.ParentId = bankruptAccount.Id;
+        debtorAccount.ParentId = bankruptAccount.Id;
         debtorAccount.RecordTypeId = Account_Debtor_RecordTypeId;
         update debtorAccount;
-		List<Account> bankruptAccounts = new List<Account>();
+        List<Account> bankruptAccounts = new List<Account>();
         bankruptAccounts.add(bankruptAccount);
         bankruptAccounts.add(debtorAccount);
         return bankruptAccounts;
@@ -48,17 +50,17 @@ public class TestDataFactory {
         return a;
     }
     /*
-    public static List<Account> createMultipleAccounts(Integer numOfAccts){
-        List<Account> accounts = new List<Account>();
-        for(Integer i = 0 ; i < numOfAccts; i++){
-            Account a = createAccountWCompanyName('Test Account ' + i);
-            accounts.add(a);
-        }
-        return accounts;
-    }
-    */
+public static List<Account> createMultipleAccounts(Integer numOfAccts){
+List<Account> accounts = new List<Account>();
+for(Integer i = 0 ; i < numOfAccts; i++){
+Account a = createAccountWCompanyName('Test Account ' + i);
+accounts.add(a);
+}
+return accounts;
+}
+*/
     public static List<Lead> createLeadsWCompanyName(Integer numOfLeads, String companyName){
-		List<Lead> new_leads = new List<Lead>();
+        List<Lead> new_leads = new List<Lead>();
         for (integer i = 0 ; i < numOfLeads; i++){
             Lead new_lead = new Lead();
             new_lead.Company = companyName;
@@ -70,5 +72,5 @@ public class TestDataFactory {
         //insert new_leads;
         return new_leads;
     }
-
+    
 }

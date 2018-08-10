@@ -486,7 +486,7 @@ IF( Admin503B_Scheduled_As_Disputed__c , &apos;D&apos;, NULL)</formula>
         <externalId>false</externalId>
         <formula>Admin503B_Claimed_Amount__c + Admin_Claimed_Amount__c + Priority_Claimed_Amount__c + Secured_Claimed_Amount__c + Unsecured_Claimed_Amount__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Claimed Total</label>
+        <label>Total Claimed Amt</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
@@ -4746,7 +4746,7 @@ IF( Priority_Scheduled_as_Disputed__c , &apos;D&apos;, NULL)</formula>
         <externalId>false</externalId>
         <formula>Admin503B_Scheduled_Amount__c + Admin_Scheduled_Amount__c + Priority_Scheduled_Amount__c + Secured_Scheduled_Amount__c + Unsecured_Scheduled_Amount__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Scheduled Total</label>
+        <label>Total Scheduled Amt</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
@@ -5055,9 +5055,15 @@ IF( Unsecured_Scheduled_as_Disputed__c, &apos;D&apos;, NULL)</formula>
         <columns>Claim_Amount__c</columns>
         <columns>LEAD.STATUS</columns>
         <columns>Bankruptcy__c</columns>
+        <columns>Claimed_Total__c</columns>
         <columns>LEAD.COMPANY</columns>
         <columns>LEAD.CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.LEAD_SOURCE</field>
+            <operation>equals</operation>
+            <value>Proof of Claims</value>
+        </filters>
         <label>All Open Claims</label>
     </listViews>
     <listViews>

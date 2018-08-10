@@ -69,6 +69,15 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Auto_Number__c</fullName>
+        <description>this is an auto generated number field for records</description>
+        <displayFormat>REF{000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Auto Number</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>Bankrupcy__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -95,17 +104,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Claim_Amount__c</fullName>
-        <externalId>false</externalId>
-        <label>Claim Amount</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
     </fields>
     <fields>
         <fullName>CloseDate</fullName>
@@ -225,6 +223,16 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Purchaser__c</fullName>
+        <description>this is a text field to provide the value of the Purchaser</description>
+        <externalId>false</externalId>
+        <label>Purchaser</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>ROI_Analysis_Completed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -249,6 +257,15 @@
         <fullName>TotalOpportunityQuantity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Trade_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Trade Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Type</fullName>
