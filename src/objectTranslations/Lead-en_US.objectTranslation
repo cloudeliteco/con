@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Creditor Name</value>
+        </caseValues>
+        <name>company_field_lead</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Creditor Name</value>
+        </caseValues>
+        <name>company_lead</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Creditor Name (Local)</value>
+        </caseValues>
+        <name>company_name_local_lead</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Lead Source Name</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Lead Sources</value>
+        </caseValues>
+        <name>lead_source</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Lead Layout</layout>
+        <sections>
+            <label><!-- Claim Details --></label>
+            <section>Claim Details</section>
+        </sections>
+        <sections>
+            <label><!-- Creditor Address Information --></label>
+            <section>Creditor Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- PrintSF Fields --></label>
+            <section>PrintSF Fields</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

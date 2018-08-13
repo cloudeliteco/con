@@ -1,7 +1,7 @@
 global class LeadProcessHighestTotal implements Database.Batchable<sObject>{
     
     global Database.QueryLocator start(Database.BatchableContext BC){
-        String query = 'SELECT Id, Name, Company, Allowed_Total__c FROM Lead WHERE Status = \'New\' ORDER BY Company, Allowed_Total__c DESC';
+        String query = 'SELECT Id, Name, Company, Allowed_Total__c FROM Lead WHERE Processed_for_Total__c = false ORDER BY Company, Allowed_Total__c DESC';
         return Database.getQueryLocator(query);
     }
     

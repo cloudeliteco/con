@@ -107,6 +107,16 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Debtor_Class__c</fullName>
+        <externalId>false</externalId>
+        <label>Debtor Class</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Default_Debtor_Offer_Rate__c</fullName>
         <externalId>false</externalId>
         <label>Default Debtor Offer Rate</label>
@@ -120,6 +130,16 @@
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ExternalId__c</fullName>
+        <externalId>true</externalId>
+        <label>ExternalId</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Fax</fullName>
@@ -169,6 +189,10 @@
                     <fullName>Bankrupt-specific Excluded Creditors</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Debtor</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -194,73 +218,6 @@
         <fullName>ParentId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Hierarchy</type>
-    </fields>
-    <fields>
-        <fullName>PersonAssistantName</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonAssistantPhone</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonBirthdate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonDepartment</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonDoNotCall</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonEmail</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonHasOptedOutOfEmail</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonHasOptedOutOfFax</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonHomePhone</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonLastCURequestDate</fullName>
-    </fields>
-    <fields>
-        <fullName>PersonLastCUUpdateDate</fullName>
-    </fields>
-    <fields>
-        <fullName>PersonLeadSource</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>PersonMailingAddress</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonMobilePhone</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonOtherAddress</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonOtherPhone</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PersonTitle</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Phone</fullName>
@@ -327,25 +284,25 @@
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>roll__c</fullName>
+        <externalId>false</externalId>
+        <label>roll</label>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <columns>ACCOUNT.RECORDTYPE</columns>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
         <columns>ACCOUNT.TYPE</columns>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
         <label>All Accounts</label>
     </listViews>
     <listViews>
         <fullName>Bankruptcies</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
-        <columns>ACCOUNT.TYPE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
         <columns>ACCOUNT.RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
@@ -356,11 +313,22 @@
         <label>Bankruptcies</label>
     </listViews>
     <listViews>
-        <fullName>Debtor_Accounts</fullName>
+        <fullName>Creditor_DoNotMail</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>PARENT_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Account.Creditor_DoNotMail</value>
+        </filters>
+        <label>Creditor DoNotMail</label>
+    </listViews>
+    <listViews>
+        <fullName>Debtors</fullName>
         <columns>ACCOUNT.NAME</columns>
         <columns>PARENT_NAME</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
         <columns>ACCOUNT.TYPE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Everything</filterScope>
@@ -369,7 +337,7 @@
             <operation>equals</operation>
             <value>Account.Debtors</value>
         </filters>
-        <label>Debtor Accounts</label>
+        <label>Debtors</label>
     </listViews>
     <listViews>
         <fullName>Excluded_Creditors</fullName>
@@ -431,7 +399,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Schedule</fullName>
+                <fullName>Schedules</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -666,7 +634,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Schedule</fullName>
+                <fullName>Schedules</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -900,7 +868,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>sold to other</fullName>
+                <fullName>Sold to other</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -921,7 +889,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Schedule</fullName>
+                <fullName>Schedules</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1160,7 +1128,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Schedule</fullName>
+                <fullName>Schedules</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1310,6 +1278,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Debtor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Govt Agency</fullName>
                 <default>false</default>
             </values>
@@ -1383,6 +1355,10 @@
             </values>
             <values>
                 <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor</fullName>
                 <default>false</default>
             </values>
             <values>

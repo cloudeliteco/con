@@ -15,7 +15,7 @@ public class Lead_MatchAccounts {
             existing_acount_names_map.put(a.Name.toUpperCase(), a);
         }
         
-        Set<String> disqualified_account_types = new Set<String>{'Bank', 'Competitor', 'Govt Agency'};
+        Set<String> disqualified_account_types = new Set<String>{'Bank', 'Competitor', 'Govt Agency','Debtor'};
         for(Lead l : new_leads){
             if(existing_acount_names_map.containsKey(l.Company.toUpperCase())){
                 Account a = existing_acount_names_map.get(l.Company.toUpperCase());

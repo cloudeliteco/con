@@ -42,19 +42,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Bankruptcy__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Debtor__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Bankruptcy_Court__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Default_Debtor_Offer_Rate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Debtor_Class__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -259,28 +255,6 @@
         <relatedList>RelatedAccountContactRelationList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>OPPORTUNITY.STAGE_NAME</fields>
-        <fields>OPPORTUNITY.AMOUNT</fields>
-        <fields>OPPORTUNITY.CLOSE_DATE</fields>
-        <relatedList>RelatedOpportunityList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CONTRACT.CONTRACT_NUMBER</fields>
-        <fields>CONTRACT.NAME</fields>
-        <fields>CONTRACT.START_DATE</fields>
-        <fields>CONTRACT.END_DATE</fields>
-        <fields>CONTRACT.STATUS</fields>
-        <relatedList>RelatedContractList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CASES.CASE_NUMBER</fields>
-        <fields>CASES.STATUS</fields>
-        <fields>CASES.CREATED_DATE_DATE_ONLY</fields>
-        <fields>CASES.SUBJECT</fields>
-        <relatedList>RelatedCaseList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <relatedList>RelatedContentNoteList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -310,8 +284,12 @@
     <relatedLists>
         <fields>FULL_NAME</fields>
         <fields>Debtor_Name__c</fields>
-        <fields>LEAD.STATUS</fields>
-        <fields>Filing_Date__c</fields>
+        <fields>LEAD.LEAD_SOURCE</fields>
+        <fields>DuplicateAddressInd__c</fields>
+        <fields>DuplicateCreditorInd__c</fields>
+        <fields>Unsecured_Claimed_Amount__c</fields>
+        <fields>Unsecured_Scheduled_Amount__c</fields>
+        <fields>LEAD.STREET</fields>
         <relatedList>Lead.Bankruptcy__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -333,7 +311,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h3D000000elAU</masterLabel>
+        <masterLabel>00h6A000002vqt5</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
