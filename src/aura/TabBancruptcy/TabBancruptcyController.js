@@ -1,6 +1,12 @@
 ({
     init : function(component, event, helper) {
-        window.open("one/one.app#/sObject/Account/list?filterName=00B3D000001YKO7UAO",'_target');
-        window.history.back();
+        var navEvent = $A.get("e.force:navigateToList"); 
+        navEvent.setParams({ 
+            "listViewId": '00B6A0000070O0bUAE',// 
+            "listViewName": null,
+            "scope": "Account" 
+        });
+        navEvent.fire();
     }
+      
 })
