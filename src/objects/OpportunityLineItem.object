@@ -63,8 +63,10 @@
         <fullName>Claim_ID__c</fullName>
         <externalId>false</externalId>
         <label>Claim ID</label>
+        <length>30</length>
         <required>false</required>
-        <type>TextArea</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Claim_Source__c</fullName>
@@ -120,6 +122,15 @@
     </fields>
     <fields>
         <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>Free_Transfer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>this field will be checked when a claim is obtained for free</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mark the claim if purchased with no charge</inlineHelpText>
+        <label>Free Transfer</label>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>ListPrice</fullName>

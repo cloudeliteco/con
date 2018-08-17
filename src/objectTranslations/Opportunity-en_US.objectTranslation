@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Purchase Price Amount</value>
+        </caseValues>
+        <name>amount_opportunity</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Active Opportunity --></label>
+        <name>Active_Opportunity__c</name>
+        <relationshipLabel><!-- Opportunities (Active) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Number --></label>
+        <name>Auto_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bankruptcy --></label>
+        <name>Bankrupcy__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Budget Confirmed --></label>
+        <name>Budget_Confirmed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission Amount --></label>
+        <name>Commission_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission Rate --></label>
+        <name>Commission_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Debtor --></label>
+        <name>Debtor__c</name>
+        <relationshipLabel><!-- Opportunities (Debtor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Discovery Completed --></label>
+        <name>Discovery_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- InActive Opportunity --></label>
+        <name>InActive_Opportunity__c</name>
+        <relationshipLabel><!-- Opportunities (InActive) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Loss Reason --></label>
+        <name>Loss_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Lost to Competitor</masterLabel>
+            <translation><!-- Lost to Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Budget / Lost Funding</masterLabel>
+            <translation><!-- No Budget / Lost Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Decision / Non-Responsive</masterLabel>
+            <translation><!-- No Decision / Non-Responsive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Original Purchased Face Amount --></label>
+        <name>Original_Purchased_Face_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manager can override the percentage for RF --></help>
+        <label><!-- Override RF Percentage --></label>
+        <name>Override_RF_Percentage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Managers can override the standard percentage for SRF --></help>
+        <label><!-- Override SRF Percentage --></label>
+        <name>Override_SRF_Percentage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Show Face Amount for Claims Purchased --></help>
+        <label><!-- Purchased Face Amount --></label>
+        <name>Purchased_Face_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The rate will be reflected on all related Claims. --></help>
+        <label><!-- Purchased Rate --></label>
+        <name>Purchased_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchaser --></label>
+        <name>Purchaser__c</name>
+        <picklistValues>
+            <masterLabel>Contrarian Funds, LLC</masterLabel>
+            <translation><!-- Contrarian Funds, LLC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RF Capital Percentage --></label>
+        <name>RF_Capital_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- RF Commission Amount --></label>
+        <name>RF_Commission_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- ROI Analysis Completed --></label>
+        <name>ROI_Analysis_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- SRF Capital Percentage --></label>
+        <name>SRF_Capital_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- SRF Commission Amount --></label>
+        <name>SRF_Commission_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Owner --></label>
+        <name>Secondary_Owner__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the Purchase Price Amount plus the Total commission Amount --></help>
+        <label><!-- Total Purchase Price Amount --></label>
+        <name>Total_Purchase_Price_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade Date --></label>
+        <name>Trade_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Commission --></label>
+            <section>Commission</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Details --></label>
+            <section>Purchase Details</section>
+        </sections>
+        <sections>
+            <label><!-- Purchased Amounts --></label>
+            <section>Purchased Amounts</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label><!-- New_Opportunity --></label>
+        <name>New_Opportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

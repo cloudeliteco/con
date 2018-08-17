@@ -23,12 +23,12 @@
                 <field>Claim_Source__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Product_Type__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>ProductCode</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -41,14 +41,6 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ServiceDate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>ListPrice</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Required</behavior>
                 <field>UnitPrice</field>
             </layoutItems>
@@ -59,6 +51,10 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Quantity</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Free_Transfer__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -108,7 +104,6 @@
     <multilineLayoutFields>Product2Id</multilineLayoutFields>
     <multilineLayoutFields>Quantity</multilineLayoutFields>
     <multilineLayoutFields>UnitPrice</multilineLayoutFields>
-    <multilineLayoutFields>ServiceDate</multilineLayoutFields>
     <multilineLayoutFields>Description</multilineLayoutFields>
     <multilineLayoutFields>OpportunityId</multilineLayoutFields>
     <multilineLayoutFields>Debtor__c</multilineLayoutFields>

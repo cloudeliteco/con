@@ -21,12 +21,13 @@
         <members>AssetRelationship-en_US</members>
         <members>Lead-en_US</members>
         <members>OpportunityLineItem-en_US</members>
+        <members>Opportunity-en_US</members>
         <name>CustomObjectTranslation</name>
     </types>
     <types>
-    	<members>OpportunityStage</members>
-    	<name>StandardValueSet</name>
-	</types>
+        <members>OpportunityStage</members>
+        <name>StandardValueSet</name>
+    </types>
     <types>
         <members>*</members>
         <name>Profile</name>
@@ -47,6 +48,7 @@
         <members>Asset</members>
         <members>Lead</members>
         <members>Opportunity</members>
+        <members>OpportunityLineItem</members>
         <name>Workflow</name>
     </types>
     <types>
@@ -68,15 +70,6 @@
         <name>Layout</name>
     </types>
     <types>
-        <members>Account</members>
-        <members>Case</members>
-        <members>Contact</members>
-        <members>Product2</members>
-        <members>PricebookEntry</members>
-        <members>*</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
         <members>*</members>
         <name>ReportType</name>
     </types>
@@ -84,6 +77,18 @@
         <members>Opportunity</members>
         <members>Forecasting</members>
         <name>Settings</name>
+    </types>
+    <types>
+    	<members>Account</members>
+        <members>Case</members>
+        <members>Contact</members>
+        <members>Product2</members>
+        <members>PricebookEntry</members>
+        <members>*</members>
+        <members>Opportunity</members>
+        <members>OpportunityLineItem</members>
+        <members>Lead</members>
+        <name>CustomObject</name>
     </types>
     <version>38.0</version>
 </Package>

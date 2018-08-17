@@ -134,6 +134,32 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Commission_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Commission_Rate__c  *  Purchased_Face_Amount__c</formula>
+        <label>Commission Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Commission_Rate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(IsBlank(Purchased_Rate__c),Purchased_Rate__c=0),null, 
+IF( 
+(Purchased_Rate__c &gt; 0.1499), 
+0.01, 
+0.006))</formula>
+        <label>Commission Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>ContractId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -169,17 +195,6 @@
     <fields>
         <fullName>ExpectedRevenue</fullName>
         <trackTrending>false</trackTrending>
-    </fields>
-    <fields>
-        <fullName>Final_offer_rate__c</fullName>
-        <externalId>false</externalId>
-        <label>Final offer rate</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Percent</type>
     </fields>
     <fields>
         <fullName>InActive_Opportunity__c</fullName>
@@ -254,6 +269,41 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Original_Purchased_Face_Amount__c</fullName>
+        <description>this field is a roll up of the original Claim amount</description>
+        <externalId>false</externalId>
+        <label>Original Purchased Face Amount</label>
+        <summarizedField>OpportunityLineItem.Quantity</summarizedField>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Override_RF_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Manager can override the percentage for RF</inlineHelpText>
+        <label>Override RF Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Override_SRF_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Managers can override the standard percentage for SRF</inlineHelpText>
+        <label>Override SRF Percentage</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -268,6 +318,36 @@
         <fullName>Probability</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Purchased_Face_Amount__c</fullName>
+        <description>this field will show only the total amount for all claims purchased</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Show Face Amount for Claims Purchased</inlineHelpText>
+        <label>Purchased Face Amount</label>
+        <summarizedField>OpportunityLineItem.Quantity</summarizedField>
+        <summaryFilterItems>
+            <field>OpportunityLineItem.Free_Transfer__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Purchased_Rate__c</fullName>
+        <description>this field to specify the offer rate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The rate will be reflected on all related Claims.</inlineHelpText>
+        <label>Purchased Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Purchaser__c</fullName>
@@ -288,6 +368,34 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>RF_Capital_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(IsBlank(Commission_Rate__c),Commission_Rate__c=0),null, 
+IF( 
+NOT 
+(ISBLANK(Override_RF_Percentage__c)), 
+Override_RF_Percentage__c, 
+
+IF (Commission_Rate__c = 0.01, 0.80, 0.90)))</formula>
+        <label>RF Capital Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RF_Commission_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>RF_Capital_Percentage__c  *  Commission_Amount__c</formula>
+        <label>RF Commission Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>ROI_Analysis_Completed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -295,6 +403,35 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SRF_Capital_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(IsBlank(Commission_Rate__c),Commission_Rate__c=0),null, 
+IF( 
+NOT 
+(ISBLANK(Override_SRF_Percentage__c)), 
+Override_SRF_Percentage__c, 
+
+IF (Commission_Rate__c = 0.01, 0.20, 0.10)))</formula>
+        <label>SRF Capital Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>SRF_Commission_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>SRF_Capital_Percentage__c  *  Commission_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SRF Commission Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Secondary_Owner__c</fullName>
@@ -325,6 +462,18 @@
         <fullName>TotalOpportunityQuantity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Total_Purchase_Price_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Commission_Amount__c  + Amount</formula>
+        <inlineHelpText>This is the Purchase Price Amount plus the Total commission Amount</inlineHelpText>
+        <label>Total Purchase Price Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Trade_Date__c</fullName>

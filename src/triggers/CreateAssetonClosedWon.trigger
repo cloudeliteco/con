@@ -1,8 +1,8 @@
 trigger CreateAssetonClosedWon on Opportunity (after insert, after update) {
      for(Opportunity o: trigger.new){ 
-      if(o.StageName == 'Accepted' && o.HasOpportunityLineItem == true){
+      if(o.Iswon == true && o.HasOpportunityLineItem == true){
          String opptyId = o.Id;
-         OpportunityLineItem[] OLI = [Select UnitPrice, Claim_ID__c, Quantity, TotalPrice, PricebookEntry.Product2Id, PricebookEntry.Product2.Name, Description, Converted_to_Asset__c  
+         OpportunityLineItem[] OLI = [Select UnitPrice, Debtor__c, Claim_ID__c, Quantity, TotalPrice, PricebookEntry.Product2Id, PricebookEntry.Product2.Name, Description, Converted_to_Asset__c  
                                       From OpportunityLineItem 
                                       where OpportunityId = :opptyId  and Converted_to_Asset__c = false];
          Asset[] ast = new Asset[]{};
@@ -13,6 +13,7 @@ trigger CreateAssetonClosedWon on Opportunity (after insert, after update) {
             a.Product2Id = ol.PricebookEntry.Product2Id;
             a.Purchase_Amount__c = ol.TotalPrice;
             a.Quantity = ol.Quantity;
+            a.Debtor__c = ol.Debtor__c;
             a.Purchased_price__c  =  ol.UnitPrice;
             a.SerialNumber = ol.Claim_ID__c;
             a.PurchaseDate = o.CloseDate;

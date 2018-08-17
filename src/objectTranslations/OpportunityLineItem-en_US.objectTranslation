@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Claim</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Claims</value>
+    </caseValues>
     <fields>
         <caseValues>
             <plural>false</plural>
-            <value>Claim Amount</value>
+            <value>Opportunity Claim Description</value>
+        </caseValues>
+        <name>opportunity_product_description</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity Claim Information</value>
+        </caseValues>
+        <name>opportunity_product_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity Claim Report</value>
+        </caseValues>
+        <name>opportunity_product_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Claim Original Amount</value>
         </caseValues>
         <name>quantity_opportunitylineitem</name>
-        <startsWith>Consonant</startsWith>
+        <startsWith>Vowel</startsWith>
     </fields>
     <fields>
         <caseValues>
@@ -14,14 +46,94 @@
             <value>Offer Rate</value>
         </caseValues>
         <name>sales_price_opportunitylineitem</name>
-        <startsWith>Consonant</startsWith>
+        <startsWith>Vowel</startsWith>
     </fields>
     <fields>
         <caseValues>
             <plural>false</plural>
-            <value>Purchase Amount</value>
+            <value>Purchase Price Amount</value>
         </caseValues>
         <name>total_price_opportunitylineitem</name>
-        <startsWith>Consonant</startsWith>
+        <startsWith>Vowel</startsWith>
     </fields>
+    <fields>
+        <label><!-- Claim Held By --></label>
+        <name>Claim_Held_By__c</name>
+        <picklistValues>
+            <masterLabel>Change of Address</masterLabel>
+            <translation><!-- Change of Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Participation</masterLabel>
+            <translation><!-- Participation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Claim ID --></label>
+        <name>Claim_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Source --></label>
+        <name>Claim_Source__c</name>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proof of Claims</masterLabel>
+            <translation><!-- Proof of Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schedules</masterLabel>
+            <translation><!-- Schedules --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top 30</masterLabel>
+            <translation><!-- Top 30 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Converted to Asset? --></label>
+        <name>Converted_to_Asset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Debtor Account for Lead --></help>
+        <label><!-- Debtor --></label>
+        <name>Debtor__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Mark the claim if purchased with no charge --></help>
+        <label><!-- Free Transfer --></label>
+        <name>Free_Transfer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promissory Note</masterLabel>
+            <translation><!-- Promissory Note --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Claim</masterLabel>
+            <translation><!-- Trade Claim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit</masterLabel>
+            <translation><!-- Unit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Claimed Amount --></label>
+        <name>Total_Claimed_Amount__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
 </CustomObjectTranslation>

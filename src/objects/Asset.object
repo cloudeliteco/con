@@ -80,6 +80,19 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Debtor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>this field will show reference to the debtor</description>
+        <externalId>false</externalId>
+        <label>Debtor</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Purchased Claims</relationshipLabel>
+        <relationshipName>Purchased_Claims</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
